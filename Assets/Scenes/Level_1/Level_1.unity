@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 428979435}
   - component: {fileID: 428979434}
   - component: {fileID: 428979436}
+  - component: {fileID: 428979437}
   m_Layer: 5
   m_Name: LevelCompleted
   m_TagString: Untagged
@@ -1357,6 +1358,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &428979437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428979432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f31b22164fae5488127c5aa1d33225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &578359208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5554029542779144196, guid: 600333fd3fa8e9942b88858a2287ef39, type: 3}
