@@ -21,16 +21,11 @@ public class PlayerMovement : MonoBehaviour
     GameObject shield;
     bool hasShield = false;
 
-    //Reset List
-    List<GameObject> moved = new List<GameObject>();
-
     //Delay
     float delay = 1.5f;
 
     private void Update()
     {
-
-
         if (Input.GetButtonUp("Restart"))
         {
             restart(0);
@@ -89,14 +84,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collisionInfo.gameObject.CompareTag("ShieldPickUp"))
         {
-            //Move PickUp Below Level
-            Vector3 temp = collisionInfo.gameObject.transform.position;
-            collisionInfo.gameObject.transform.position = new Vector3(temp.x, temp.y - 5, temp.z);
-
-            moved.Add(collisionInfo.gameObject);
-
             //Add Shield
-            temp = player.transform.position;
+            Vector3 temp = player.transform.position;
             shield = Instantiate(shieldPrefab, new Vector3(temp.x, 0, temp.z), Quaternion.identity);
             shield.transform.parent = player.transform;
 
@@ -111,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
 
                 Debug.Log("Protected");
 
-                //Deal with Shield
                 Destroy(shield);
                 hasShield = false;
             }
