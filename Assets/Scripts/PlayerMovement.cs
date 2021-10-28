@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     //Player
     public GameObject player;
     public Rigidbody rb;
+    Vector3 vel;
 
     //Speed
     float Speed = 25f;
@@ -42,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        vel = rb.velocity;
+        player.transform.rotation = new Quaternion();
         rb.AddForce(-Speed, 0, 0 * Time.deltaTime);
 
         if (Input.GetKey("d"))
@@ -84,6 +87,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (collisionInfo.gameObject.CompareTag("ShieldPickUp"))
         {
+
+            Destroy(collisionInfo.gameObject);
+
             //Add Shield
             Vector3 temp = player.transform.position;
             shield = Instantiate(shieldPrefab, new Vector3(temp.x, 0, temp.z), Quaternion.identity);
@@ -91,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
 
             hasShield = true;
             Debug.Log("Got Shield");
+
+            rb.velocity = vel;
         }
 
         if (collisionInfo.collider.tag == "Obstical")
@@ -98,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             if (hasShield) //If Player Has Shiled they keep going
             {
 
+                Destroy(collisionInfo.gameObject);
                 Debug.Log("Protected");
 
                 Destroy(shield);
