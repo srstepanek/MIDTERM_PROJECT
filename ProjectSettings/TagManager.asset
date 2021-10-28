@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstical
+  - ShieldPickUp
+  - Shield
+  - JumpPad
   layers:
   - Default
   - TransparentFX
