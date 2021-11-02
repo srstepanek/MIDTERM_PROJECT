@@ -149,7 +149,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: df2988c055be26c4296008b2ee456039, type: 3}
   shieldPickUpSound: {fileID: 8300000, guid: 1ce6908749d09f8468747f25775a89c8, type: 3}
   shieldHitSound: {fileID: 8300000, guid: 6bd0eb77dbcb54a458a3a3abd0dce56c, type: 3}
-  jumpSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: c7e3035eb60a52c47bffdd148e3096b2, type: 3}
   effects: {fileID: 2309111102070104465}
 --- !u!82 &5215915578429781374
 AudioSource:
