@@ -36,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Restart");
         }
 
+        if (Input.GetButtonUp("Cancel"))
+        {
+            Debug.Log("Exit");
+            Application.Quit();
+        }
+
         if (player.transform.position.y < -5)
         {
            restart(delay);
