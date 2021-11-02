@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     //Delay
     float delay = 1.5f;
 
+    //Music
+    public Music music;
+
     private void Update()
     {
         if (Input.GetButtonUp("Restart"))
@@ -84,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collisionInfo)
     {
+        music.PlayOnHit(collisionInfo, hasShield);
 
         if (collisionInfo.gameObject.CompareTag("ShieldPickUp"))
         {
